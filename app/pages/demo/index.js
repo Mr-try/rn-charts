@@ -13,7 +13,28 @@ class Charts extends Component {
   }
   // 环形图
   renderPie() {
-    return (<Pie />)
+    const option = {
+      name: '环形图',      
+      legend: {
+        type: 'circle',
+        orient: 'vertical',
+        x: 'left',
+        data: ['类型1', '类型2', '类型3', '类型4', '类型5']
+      },
+      charts: {
+        type: 'pie',
+        radius: 1,
+        label: {show: true},
+        data: [
+          {value: 100, name: '类型1'},
+          {value: 200, name: '类型2'},
+          {value: 300, name: '类型3'},
+          {value: 400, name: '类型4'},
+          {value: 500, name: '类型5'}
+        ]
+      }
+    }
+    return (<Pie option={option} width={300} height={200}/>)
   }
   // 饼状图
   renderPie2() {
