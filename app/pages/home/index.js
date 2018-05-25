@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Image } from 'react-native'
-import { NavigationActions } from 'app/utils'
 import { connect } from 'react-redux'
 import { Button } from 'components'
 
@@ -17,10 +16,9 @@ class Home extends Component {
     ),
   }
 
-  gotoDetail(routeName) {
-    this.props.dispatch(NavigationActions.navigate({ routeName }))
+  gotoDetail(type) {
+    this.props.navigation.navigate('Demo', {type}) 
   }
-
   render() {
     return (
       <View style={styles.container}>
